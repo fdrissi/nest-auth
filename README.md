@@ -26,48 +26,50 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## Prerequisites
+
+Before you begin, ensure you have installed:
+
+Docker: https://www.docker.com/products/docker-desktop
+
 ## Installation
 
 ```bash
-$ pnpm install
+$ git clone https://github.com/fdrissi/nest-auth
+$ cd nest-auth
 ```
 
-## Running the app
+Copy the contents of the .env.example file into a new .env file. Docker will use the .env file for setting up your environment variables when running the containers.
 
 ```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+$ cp .env.example .env
 ```
 
+Use Docker Compose to build and run your containers. This could take a while, particularly if it's the first time you are building these containers. Any subsequent builds will be much faster.
+
+```bash
+$ docker-compose up
+```
+
+Now, the NestJS application and PostgreSQL database should be up and running.
+
+## Available URLs
+
+After running the application, you can access:
+
+The NestJS application: http://localhost:3000
+Swagger UI: http://localhost:3000/api/v1/docs
+PgAdmin: http://localhost:8080/
+
+## Using the Application
+
+Once the application is running, you can use the Swagger UI to test the endpoints. Swagger provides an interactive UI for testing the API endpoints without having to use tools like Postman.
+
 ## Test
+
+I have created only tests for auth service/controller.
 
 ```bash
 # unit tests
 $ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
