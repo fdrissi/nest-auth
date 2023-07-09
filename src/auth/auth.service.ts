@@ -1,11 +1,6 @@
-import {
-  Injectable,
-  NotFoundException,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { JwtPayload } from './jwt-payload.interface';
-import * as bcrypt from 'bcryptjs';
 import { UserWithoutPassword } from 'src/user/user.entity';
 import { JwtService } from './jwt.service';
 import { LoginDto } from './auth.dto';
